@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Studios – moviesdb</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 30px; }
+        h1 { color: #333; }
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid #ccc; padding: 8px 12px; text-align: left; }
+        th { background-color: #4a90d9; color: white; }
+        tr:nth-child(even) { background-color: #f2f2f2; }
+        nav a { margin-right: 15px; text-decoration: none; color: #4a90d9; font-weight: bold; }
+    </style>
+</head>
+<body>
+<nav>
+    <a href="/movies">Movies</a>
+    <a href="/studios">Studios</a>
+    <a href="/people">People</a>
+</nav>
+<h1>Studios</h1>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Gegründet</th>
+            <th>Filme (IDs)</th>
+            <th>Hauptsitz</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="studio : ${studios}">
+            <td th:text="${studio.id}"></td>
+            <td th:text="${studio.name}"></td>
+            <td th:text="${studio.yearFounded}"></td>
+            <td th:text="${studio.movies}"></td>
+            <td th:if="${studio.headquarters != null}"
+                th:text="${studio.headquarters.address + ', ' + studio.headquarters.city + ', ' + studio.headquarters.country}">
+            </td>
+            <td th:if="${studio.headquarters == null}">-</td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>

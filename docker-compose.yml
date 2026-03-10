@@ -1,0 +1,26 @@
+version: '3.9'
+
+services:
+  mysql:
+    image: mysql:latest
+    container_name: dev_mysql
+    command: mysqld
+    environment:
+#      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: default_schema
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/1.sql
+    ports:
+      - 3306:3306
+
+  mongodb:
+    image: mongo:5.0
+    ports:
+      - 27017:27017
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=root
+    volumes:
+      - ./init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
