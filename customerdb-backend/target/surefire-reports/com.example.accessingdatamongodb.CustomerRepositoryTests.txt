@@ -1,0 +1,22 @@
+-------------------------------------------------------------------------------
+Test set: com.example.accessingdatamongodb.CustomerRepositoryTests
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 4.197 s <<< FAILURE! - in com.example.accessingdatamongodb.CustomerRepositoryTests
+findsByLastName  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: java.lang.IllegalStateException: Failed to execute CommandLineRunner
+Caused by: org.springframework.data.mongodb.UncategorizedMongoDbException: Command failed with error 13 (Unauthorized): 'command delete requires authentication' on server localhost:27017. The full response is {"ok": 0.0, "errmsg": "command delete requires authentication", "code": 13, "codeName": "Unauthorized"}; nested exception is com.mongodb.MongoCommandException: Command failed with error 13 (Unauthorized): 'command delete requires authentication' on server localhost:27017. The full response is {"ok": 0.0, "errmsg": "command delete requires authentication", "code": 13, "codeName": "Unauthorized"}
+Caused by: com.mongodb.MongoCommandException: Command failed with error 13 (Unauthorized): 'command delete requires authentication' on server localhost:27017. The full response is {"ok": 0.0, "errmsg": "command delete requires authentication", "code": 13, "codeName": "Unauthorized"}
+
+setsIdOnSave  Time elapsed: 0 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: java.lang.IllegalStateException: Failed to execute CommandLineRunner
+Caused by: org.springframework.data.mongodb.UncategorizedMongoDbException: Command failed with error 13 (Unauthorized): 'command delete requires authentication' on server localhost:27017. The full response is {"ok": 0.0, "errmsg": "command delete requires authentication", "code": 13, "codeName": "Unauthorized"}; nested exception is com.mongodb.MongoCommandException: Command failed with error 13 (Unauthorized): 'command delete requires authentication' on server localhost:27017. The full response is {"ok": 0.0, "errmsg": "command delete requires authentication", "code": 13, "codeName": "Unauthorized"}
+Caused by: com.mongodb.MongoCommandException: Command failed with error 13 (Unauthorized): 'command delete requires authentication' on server localhost:27017. The full response is {"ok": 0.0, "errmsg": "command delete requires authentication", "code": 13, "codeName": "Unauthorized"}
+
+findsByExample  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: java.lang.IllegalStateException: Failed to execute CommandLineRunner
+Caused by: org.springframework.data.mongodb.UncategorizedMongoDbException: Command failed with error 13 (Unauthorized): 'command delete requires authentication' on server localhost:27017. The full response is {"ok": 0.0, "errmsg": "command delete requires authentication", "code": 13, "codeName": "Unauthorized"}; nested exception is com.mongodb.MongoCommandException: Command failed with error 13 (Unauthorized): 'command delete requires authentication' on server localhost:27017. The full response is {"ok": 0.0, "errmsg": "command delete requires authentication", "code": 13, "codeName": "Unauthorized"}
+Caused by: com.mongodb.MongoCommandException: Command failed with error 13 (Unauthorized): 'command delete requires authentication' on server localhost:27017. The full response is {"ok": 0.0, "errmsg": "command delete requires authentication", "code": 13, "codeName": "Unauthorized"}
+
