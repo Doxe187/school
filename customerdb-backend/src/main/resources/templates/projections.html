@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Mongo DB – Projections</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+<body class="content">
+    <header class="section">
+        <h1>Mongo DB</h1>
+        <h2>Projections</h2>
+        <p>Only <strong>firstName</strong> is returned – id and lastName are excluded.</p>
+        <nav>
+            <a href="/">Home</a> |
+            <a href="/aggregations">Aggregations</a>
+        </nav>
+    </header>
+    <main class="section">
+        <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+            <thead>
+                <tr>
+                    <th>firstName</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="customer : ${customers}">
+                    <td th:text="${customer.firstName}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</body>
+</html>

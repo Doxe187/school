@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Mongo DB – Aggregations</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+<body class="content">
+    <header class="section">
+        <h1>Mongo DB</h1>
+        <h2>Aggregations</h2>
+        <p>Customers grouped by <strong>lastName</strong> – all firstNames per group collected with <code>$addToSet</code>.</p>
+        <nav>
+            <a href="/">Home</a> |
+            <a href="/projections">Projections</a>
+        </nav>
+    </header>
+    <main class="section">
+        <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+            <thead>
+                <tr>
+                    <th>lastName (group)</th>
+                    <th>firstNames</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="group : ${groups}">
+                    <td th:text="${group.id}"></td>
+                    <td th:text="${group.names}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</body>
+</html>
